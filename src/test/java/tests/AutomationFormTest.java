@@ -20,6 +20,7 @@ public class AutomationFormTest extends TestBase {
     @Story("Создание новой сборки в Jenkins")
     @DisplayName("Автозаполнение формы регистрации")
     @Link(name = "Demoqa", url = "https://demoqa.com/automation-practice-form")
+
     void successfulTest() {
         String fName = "Mark";
         String lName = "Born";

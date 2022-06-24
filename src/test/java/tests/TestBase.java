@@ -8,7 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class TestBase {
+public class TestBase extends Attachments {
     @BeforeAll
     static void beforeAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -28,9 +28,9 @@ public class TestBase {
 
     @AfterEach
     void addAttach() {
-        Attachments.screenshotAs("Last screenshot");
-        Attachments.pageSource();
-        Attachments.browserConsoleLogs();
-        Attachments.addVideo();
+        screenshotAs("Last screenshot");
+        pageSource();
+        browserConsoleLogs();
+        addVideo();
     }
 }

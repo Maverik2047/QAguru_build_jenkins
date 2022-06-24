@@ -18,8 +18,8 @@ public class AutomationFormTest extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @Feature("Сборка в Jenkins")
     @Story("Создание новой сборки в Jenkins")
-    @DisplayName("Автозаполнение формы регистрации")
     @Link(name = "Demoqa", url = "https://demoqa.com/automation-practice-form")
+    @DisplayName("Автозаполнение формы регистрации")
 
     void successfulTest() {
         String fName = "Mark";

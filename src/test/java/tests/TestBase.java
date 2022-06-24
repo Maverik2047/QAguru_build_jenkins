@@ -1,12 +1,14 @@
 package tests;
 
+import attach_help.Attachments;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class TestBase {
+public class TestBase extends Attachments {
     @BeforeAll
     static void beforeAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -22,5 +24,13 @@ public class TestBase {
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
 
+    }
+
+    @AfterEach
+    void addAttach() {
+        screenshotAs("Last screenshot");
+        pageSource();
+        browserConsoleLogs();
+        addVideo();
     }
 }

@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class AutomationFormTest {
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.baseUrl = " https://demoqa.com";
         Configuration.browserSize = "1800x900";
         Configuration.holdBrowserOpen = true;
     }

@@ -9,6 +9,10 @@ version '1.0'
 repositories {
     mavenCentral()
 }
+def allureVersion = "2.18.1",
+    selenideVersion = "6.6.4",
+    junitVersion = "5.8.2",
+    slf4jVersion = "1.7.32"
 
 allure {
     report {
@@ -28,15 +32,16 @@ dependencies {
     testImplementation (
             'org.junit.jupiter:junit-jupiter:5.8.2',
             'com.codeborne:selenide:6.6.2',
-            'io.qameta.allure:allure-selenide:2.18.1'
+            'io.qameta.allure:allure-selenide:2.18.1',
+            "org.slf4j:slf4j-simple:$slf4jVersion"
     )
 }
 
+task properties_test(type: Test) {
+    useJUnitPlatform{
+        includeTags "test"
+    }
+}
 test {
     useJUnitPlatform()
-}
-task properties_test6(type: Test) {
-    useJUnitPlatform{
-        includeTags "test1"
-    }
 }
